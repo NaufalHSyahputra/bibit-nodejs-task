@@ -5,7 +5,14 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint --fix --ext .js modules/",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/app/node_modules/"
+    ]
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -16,11 +23,13 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "@jest-mock/express": "^1.4.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-prettier": "^3.4.1",
+    "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "prisma": "^2.29.1"
   }
