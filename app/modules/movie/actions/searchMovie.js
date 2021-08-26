@@ -15,18 +15,12 @@ const searchMovie = async (req, res) => {
     return res.status(error.response.status).json(error.response.data);
   }
   const date = new Date();
-  console.log(
-    `${date.getFullYear()}-${
-      date.getMonth() + 1
-    }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-  );
   const logData = {
     endpoint: `${process.env.BASE_URL}${req.originalUrl}`,
     access_at: `${date.getFullYear()}-${
       date.getMonth() + 1
     }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
   };
-  console.log(logData.access_at);
   createLog(logData);
   return res.status(result.status).json(result.data);
 };

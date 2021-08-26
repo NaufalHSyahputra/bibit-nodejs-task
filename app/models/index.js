@@ -17,6 +17,9 @@ const sequelize = new Sequelize(
     port: process.env.MYSQL_LOCAL_PORT,
     dialect: "mysql",
     timezone: "Asia/Jakarta",
+    dialectOptions: {
+			timezone: "local",
+		}
   }
 );
 
