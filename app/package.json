@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "lint": "eslint --fix --ext .js modules/",
+    "lint": "eslint --fix --ext .js .",
     "format": "prettier -w .",
     "test": "jest"
   },
@@ -29,10 +29,10 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^3.4.1",
     "jest": "^27.0.6",
-    "prettier": "^2.3.2",
+    "prettier": "2.3.2",
     "sequelize-cli": "^6.2.0"
   }
 }
