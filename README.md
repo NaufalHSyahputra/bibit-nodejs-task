@@ -11,13 +11,15 @@ http://www.omdbapi.com/
 - Get Detail Movie by IMDB ID
 - Get Detail Movie by Movie Title
 - Log
-
+- 
+## Documentation
+Swagger Documentation URL: http://143.198.183.254:3003/api-docs/
   
 ## Demo
 
-Search Demo URL: http://143.198.183.254:3003/movie/search?s=rush
+Search Demo URL: http://143.198.183.254:3003/api/movie/search?s=rush
 
-Detail Demo URL: http://143.198.183.254:3003/movie/detail?i=tt0293564
+Detail Demo URL: http://143.198.183.254:3003/api/movie/detail?i=tt0293564
 
   
 ## Environment Variables
