@@ -18,8 +18,8 @@ const sequelize = new Sequelize(
     dialect: "mysql",
     timezone: "Asia/Jakarta",
     dialectOptions: {
-			timezone: "local",
-		}
+      timezone: "local",
+    },
   }
 );
 

@@ -5,7 +5,7 @@ const searchMovie = require("./searchMovie.js");
 
 describe("Search Movie Tests", () => {
   it("return 401 when using invalid api key", async () => {
-    const req = getMockReq({ params: { s: null } });
+    const req = getMockReq({ query: { s: "Rush", apikey: "aef8c905a" } });
     const { res } = getMockRes();
     const result = await searchMovie(req, res);
     const responseExpected = {
@@ -17,7 +17,7 @@ describe("Search Movie Tests", () => {
   });
 
   it("return 422 when search value is null", async () => {
-    const req = getMockReq({ params: { s: null } });
+    const req = getMockReq({ query: { s: null } });
     const { res } = getMockRes();
     const result = await searchMovie(req, res);
     const responseExpected = {
