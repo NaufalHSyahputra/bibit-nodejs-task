@@ -8,8 +8,8 @@ const logAPICall = require("./middleware/logAPICall.js");
 
 const app = express();
 
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
+db.sequelize.sync().then(() => {
+  console.log("Sync DB Success.");
 });
 app.use(cors());
 app.get("/", (_req, res) => res.send("Hello, World!"));
