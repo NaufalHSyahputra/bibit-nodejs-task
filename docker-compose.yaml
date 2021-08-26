@@ -1,6 +1,9 @@
-version: '3.8'
+version: "3.8"
 
-services: 
+networks:
+  appjs:
+
+services:
   mysqldb:
     image: mysql:5.7
     restart: always
@@ -12,10 +15,13 @@ services:
       MYSQL_PASSWORD: $MYSQL_PASSWORD
     ports:
       - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
-    volumes: 
+    volumes:
       - db-config:/etc/mysql
       - db-data:/var/lib/mysql
       - ./db/backup/files/:/data_backup/data
+    networks:
+      - appjs
+
   app:
     build:
       context: .
@@ -24,13 +30,15 @@ services:
     env_file: ./.env
     ports:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
-    volumes: 
+    volumes:
       - ./app:/app
     depends_on:
       - mysqldb
     stdin_open: true
     tty: true
+    networks:
+      - appjs
 
-volumes: 
+volumes:
   db-config:
   db-data:
